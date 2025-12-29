@@ -1,6 +1,5 @@
 class Solution:
-    def getConcatenation(self, nums: List[int]) -> List[int]:
-        """
+    """
         Problem: 1929. Concatenation of Array
         https://leetcode.com/problems/concatenation-of-array/description/
 
@@ -13,7 +12,8 @@ class Solution:
 
         Space Complexity:
         - O(2n) -> O(n)
-        """
+    """
+    def getConcatenation(self, nums: List[int]) -> List[int]:
         res=nums.copy()
         for n in nums:
             res.append(n)
