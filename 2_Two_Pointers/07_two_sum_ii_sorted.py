@@ -1,6 +1,9 @@
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
         """
+        Problem: 167. Two Sum II - Input Array Is Sorted
+        https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+
         Intuition:
         - Since array is sorted, we can use two pointers to code a linear-time O(1) space solution
         - l=0,r=n-1: if sum>target, we need to make the larger number (nums[r]) smaller (so we push r inwards by doing r-=1)
