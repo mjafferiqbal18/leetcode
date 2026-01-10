@@ -12,7 +12,7 @@ class StockSpanner:
 
         - We could use a monotonically decreasing stack:
             - if stack[-1] <= curr -> curr can absorb span of whatevers on the stack
-            - if sta(ck[-1] > curr -> curr cant absorb span and is added to the stack
+            - if stack[-1] > curr -> curr cant absorb span and is added to the stack
             - similar to the daily temperatures question, where you can carry forward monotonic information to be resolved accordingly by the next element
         - Example: [7,2,1,2] ; tuple elements are (price,span)
                     (7,1) -> because stack before it is empty
