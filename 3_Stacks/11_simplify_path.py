@@ -5,7 +5,7 @@ class Solution:
         https://leetcode.com/problems/simplify-path/
 
         Intuition:
-        - First, we need to remove the '/' -> we can split the string on '/' and add those later when building our final path
+        - First, we need to remove the '/' -> we can split the string on '/' (removes all '/' and breaks the string accordingly) and add those later when building our final path
         - Since we will need to undo/remove most recent parts of the path (for example when we see '..' ) -> we should use a stack
         - Once path is split, we can process 
             - stack will represent the path, needs to start with '/'
