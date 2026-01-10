@@ -20,8 +20,6 @@ class Solution:
         Space:
         - O(n)
 
-
-        
         """
 
         stack=[]
