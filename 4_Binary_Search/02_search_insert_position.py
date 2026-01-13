@@ -11,6 +11,10 @@ class Solution:
             - all indices > r are > target
             - But when l > r, there is no index between them anymore
             - At the end, l becomes: The index of the first element ≥ target, or len(nums) if no such element exists.
+            - at the end we dont find desired index:
+                - all indexes less than l are less than target
+                - all indexes >= l are > target
+                - l is at the first such element (and thus the position we want to return)
         """
         l,r=0,len(nums)-1
         while l<=r:
