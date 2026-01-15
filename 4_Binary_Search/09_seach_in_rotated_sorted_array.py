@@ -15,6 +15,7 @@ class Solution:
                 - if target in right half, go right
                 - else go left
         - NOTE: the code assumes that the numbers are distinct!!!
+        - NOTE: its generally better to compare mid to end (instead of st to mid) -> makes coding it easier
 
         You can also ONLY check if mid=target, and make other bounds inclusive (i.e. <= instead of <)
         If you check  st or end or mid == target, then make the other bounds and comparisons strict (< instead of <=)
@@ -37,7 +38,7 @@ class Solution:
             #     return end
             if nums[mid]==target:
                 return mid
-            
+
             #now we need to go to one half of the array
             if nums[st]<=nums[mid]:#left half is sorted 
                 #st could be equal to mid (and thus sorted) so we need to check nums[st]<=nums[mid]
@@ -51,4 +52,20 @@ class Solution:
                 else:
                     end=mid-1
         return -1
+
+        """
+        comparing mid to end instead of st to mid
+        """
+        if nums[mid]<nums[end]:#right half is sorted
+                if target>nums[mid] and target<=nums[end]: #target is in right half
+                        st=mid+1
+                else:
+                    end=mid-1
+        else:
+            if target>=nums[st] and target<nums[mid]: #target is in left half
+                end=mid-1
+            else:
+                st=mid+1
+        return -1
+
         
