@@ -13,7 +13,7 @@ class Solution:
                 - if invalid, that means we need to increase the largest candiate number
         
         Time:
-        - O(nlogn)
+        - O(nlog(sum(nums)))
 
         Space:
         - O(1)
@@ -24,6 +24,7 @@ class Solution:
         we can run binary search from max(nums) to sum(nums)
         we validate the mid value by checking if that mid value is a valid solution, make it solution so far, and continue
         Time= n*log(sum)
+
         """
 
         l,r= max(nums),sum(nums)
@@ -39,6 +40,9 @@ class Solution:
         return res
     
     def canSplit(self,largest,nums,k):
+        """
+        This function checks if we can split the array into <=k subarrays, such that the sum of a subarry never exceeds largest
+        """
         subarrays=0
         currSum=0
 
@@ -82,6 +86,3 @@ class Solution:
             return res
 
         return dfs(0, k)
-
-
-
