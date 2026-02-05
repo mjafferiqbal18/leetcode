@@ -28,7 +28,7 @@ class Solution:
 
         def kSum(k,startIdx,target):
             if k!=2:
-                for i in range(n-k+1): #iterate from start till last k-1 vals
+                for i in range(startIdx,n-k+1): #iterate from start till last k-1 vals
                     #ensure you dont pick the same value for this position again
                     if i>startIdx and nums[i]==nums[i-1]:
                         continue
