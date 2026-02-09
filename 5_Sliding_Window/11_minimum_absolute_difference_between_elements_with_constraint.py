@@ -18,7 +18,7 @@ class Solution:
         Time complexity: O(nlogn) -- we sort length-n array, and then do 2n logn inserts into heap
         Space complexity: O(n)
 
-
+        (both sols are'nt mine, heaps i saw from editorial and sortedlist one off of yt maybe)
         """
         sortedNums = sorted((nums[i], i) for i in range(len(nums)))
         heapLeft, heapRight = [], []
@@ -39,22 +39,28 @@ class Solution:
         
         """
         ussing sortedlist with bisect_left
+        Allows you to add/ remove from the list in log n, along with trying to find pos of current elem in the sortedlist (also logn)
         """
         from sortedcontainers import SortedList
 
-        if x == 0:
+        if x==0:
             return 0
 
-        arr, best_dist = SortedList([]), float('inf')
-        for i in range(x, len(nums)):
-            arr.add(nums[i - x])
-            v = nums[i]
+        arr=SortedList([])
+        best_dist = float('inf')
+        for i in range(x,len(nums)): #start idx from x
+            arr.add(nums[i-x]) #add i-x, which should be a valid index
+            #add.add basically adds the elem num[i-x] in sorted order
+            v=nums[i] #current value
 
-            pos = arr.bisect_left(v)
-            if pos < len(arr):
-                best_dist = min(best_dist, abs(arr[pos] - v))
-            if pos > 0:
-                best_dist = min(best_dist, abs(arr[pos - 1] - v))
+            pos = arr.bisect_left(v) #this tells us the position of nums[i], if it were to be inserted into arr (the sortedList)
+            # remember, arr contains all elements that are at a valid distance >=k away from nums[i]
+            # pos can range from 0...len(arr) inclusive
+            # pos tells where nums[i] should land. it could land somewhere in the middle, at 0 or at len(arr)
+            if pos < len(arr):   #if pos<len(arr), that means a right value exists
+                best_dist = min(best_dist, abs(arr[pos] - v)) #right neighbour would be at arr[pos]
+            if pos > 0: #that means a left neighbour needs to exist
+                best_dist = min(best_dist, abs(arr[pos - 1] - v)) #left neighbour would be at arr[pos-1]
         
         return best_dist
 
