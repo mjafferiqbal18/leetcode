@@ -10,15 +10,16 @@ class Solution:
         https://leetcode.com/problems/reverse-linked-list-ii/
 
         Intuition:
-        - You need to track start and end of the list; once you can find that then you imaging breaking the list up (before,listToBeReversed,after)
+        - You need to track start and end of the list; once you can find that then you imagine breaking the list up (before,listToBeReversed,after)
         - Just iterate over the list to find the st, node before st, end, node after end
         - reverse from st to end
         - nodeBeforeSt.next = end, st.next = nodeAfterEnd
 
+        Time:
+        - O(n)
 
-        1 -> 2 -> 3 -> 4 -> 5
-        1 -> <- 2 <- 3 <- 4  5
-        1 ->  4-> 3-> 2-> 5
+        Space:
+        - O(1)
 
         """
         if left==right: #no reversal needed
