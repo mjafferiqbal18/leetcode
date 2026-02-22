@@ -14,7 +14,6 @@ class MyCircularQueue:
     Space:
     - O(k)
     
-    
     """
 
     def __init__(self, k: int):
