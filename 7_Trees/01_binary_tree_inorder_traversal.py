@@ -19,7 +19,7 @@ class Solution:
         - O(n)
 
         Space:
-        - O(1)
+        - O(n)
 
         """
 
