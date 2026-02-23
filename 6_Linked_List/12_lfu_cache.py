@@ -6,6 +6,9 @@ class Node:
 
 class LFUCache:
     """
+    Problem: 460. LFU Cache
+    https://leetcode.com/problems/lfu-cache/
+
     Intuition:
     -  We have our regular cache which maps a key to value
         - We need to track usedCounts and also the nodes that correspond to a usedCount (alongside their order)
