@@ -22,7 +22,6 @@ class Solution:
         Space:
         - O(1)
 
-
         """
         nodeCount=0 #denotes number of nodes visited
         dummyNode=ListNode(-1,None) 
