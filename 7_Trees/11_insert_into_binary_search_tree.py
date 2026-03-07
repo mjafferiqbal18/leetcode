@@ -7,6 +7,9 @@
 class Solution:
     def insertIntoBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
         """
+        Problem 701. Insert into a Binary Search Tree
+        https://leetcode.com/problems/insert-into-a-binary-search-tree/
+
         Intuition:
         - This is not an avl tree, so it can be unbalanced
         - To be a binary search tree, everything to your left has to be smaller than you, and everything to your right has to be larger than you
